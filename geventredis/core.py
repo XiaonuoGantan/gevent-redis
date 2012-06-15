@@ -68,7 +68,7 @@ class RedisSocket(socket):
     def _response_multi_bulk(self, response):
         number = int(response[1:])
         if number == -1:
-            return none
+            return None
         else:
             return [ self._read_response() for i in xrange(number) ]
 
