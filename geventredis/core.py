@@ -1,6 +1,3 @@
-"""
-"""
-
 from cStringIO import StringIO
 from errno import EINTR
 from gevent.socket import socket, error
