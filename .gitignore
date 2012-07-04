@@ -1,1 +1,13 @@
-*.pyc
+*.o
+*.pyc
+*~
+build/
+dist/
+.DS_Store
+.hg/
+.hgignore
+.idea/
+.project/
+*.egg-info/
+.svn
+cscope.*
