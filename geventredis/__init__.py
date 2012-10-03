@@ -668,8 +668,7 @@ class RedisClient(core.RedisSocket):
         pieces = ['ZRANGE', name, start, end]
         if withscores:
             pieces.append('withscores')
-        options = {'withscores': withscores, 'score_cast_func': score_cast_func}
-        return self._execute_command(*pieces, **options)
+        return self._execute_command(*pieces)
 
     def zrangebyscore(self, name, min, max,
             start=None, num=None, withscores=False, score_cast_func=float):
@@ -693,8 +692,7 @@ class RedisClient(core.RedisSocket):
             pieces.extend(['LIMIT', start, num])
         if withscores:
             pieces.append('withscores')
-        options = {'withscores': withscores, 'score_cast_func': score_cast_func}
-        return self._execute_command(*pieces, **options)
+        return self._execute_command(*pieces)
 
     def zrank(self, name, value):
         """
@@ -739,8 +737,7 @@ class RedisClient(core.RedisSocket):
         pieces = ['ZREVRANGE', name, start, num]
         if withscores:
             pieces.append('withscores')
-        options = {'withscores': withscores, 'score_cast_func': score_cast_func}
-        return self._execute_command(*pieces, **options)
+        return self._execute_command(*pieces)
 
     def zrevrangebyscore(self, name, max, min,
             start=None, num=None, withscores=False, score_cast_func=float):
@@ -764,8 +761,7 @@ class RedisClient(core.RedisSocket):
             pieces.extend(['LIMIT', start, num])
         if withscores:
             pieces.append('withscores')
-        options = {'withscores': withscores, 'score_cast_func': score_cast_func}
-        return self._execute_command(*pieces, **options)
+        return self._execute_command(*pieces)
 
     def zrevrank(self, name, value):
         """
